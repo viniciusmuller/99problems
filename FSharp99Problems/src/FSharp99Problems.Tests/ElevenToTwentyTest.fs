@@ -57,6 +57,36 @@ let ``"replicate" function`` () =
 
 [<Test>]
 let ``"dropEvery" function`` () =
-  let expected = [ 'a'; 'b'; 'd'; 'e'; 'g'; 'h'; 'k' ]
-  let letters = [ 'a'; 'b'; 'c'; 'd'; 'e'; 'f'; 'g'; 'h'; 'i'; 'k' ]
-  Assert.AreEqual(expected, dropEvery letters 3)
+    let expected = [ 'a'; 'b'; 'd'; 'e'; 'g'; 'h'; 'k' ]
+
+    let letters =
+        [ 'a'
+          'b'
+          'c'
+          'd'
+          'e'
+          'f'
+          'g'
+          'h'
+          'i'
+          'k' ]
+
+    Assert.AreEqual(expected, dropEvery letters 3)
+
+[<Test>]
+let ``"split" function`` () =
+    let expected = ([ 1; 2; 3 ], [ 4; 5 ])
+    Assert.AreEqual(expected, split [ 1; 2; 3; 4; 5 ] 3)
+
+[<Test>]
+let ``"slice" function`` () =
+    let expected = ([ 3; 4; 5; 6 ])
+    Assert.AreEqual(expected, slice [ 1; 2; 3; 4; 5; 6; 7; 8 ] 3 6)
+
+
+[<Test>]
+let ``"removeAt" function`` () =
+    let lst = [ 1; 2; 3; 4; 5; 6; 7; 8 ]
+    let expected = (Some 4, [ 1; 2; 3; 5; 6; 7; 8 ])
+    Assert.AreEqual(expected, removeAt lst 4)
+    // Assert.AreEqual(expected, removeAt lst 4)
