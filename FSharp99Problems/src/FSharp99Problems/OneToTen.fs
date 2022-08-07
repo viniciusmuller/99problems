@@ -4,8 +4,6 @@ type NestedList<'a> =
     | Elem of 'a
     | NList of NestedList<'a> list
 
-// let lst = [ 1; 2; 3; 4; 5; 6; 7; 8 ]
-
 module Solutions =
     // Problem 1 - Find the last element of a list
     let rec last =
@@ -80,5 +78,4 @@ module Solutions =
     //  where N is the number of duplicates of the element E.
     let private encode entry = List.head entry, length entry
 
-    let runLengthEncoding lst =
-        lst |> pack |> List.map encode
+    let runLengthEncoding lst = lst |> pack |> List.map encode

@@ -1,4 +1,4 @@
-module FSharp99Problems.Test
+module FSharp99Problems.OneToTen.Test
 
 open NUnit.Framework
 open FSharp99Problems.OneToTen
@@ -15,8 +15,6 @@ let nested =
           NList [ NList [ Elem 13 ] ]
           Elem 20 ]
     )
-
-
 
 [<SetUp>]
 let Setup () = ()
